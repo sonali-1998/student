@@ -7,7 +7,7 @@
         </div>
         <br>
         <div class="pull-right" style="margin-right: 21%;margin-top: 100px;">
-            <a class="btn btn-primary" href="{{ route('attendances.index') }}"> List Attendance</a>
+            <a class="btn btn-primary" href="{{ route('attendances.index') }}" style="margin: 20%;"> List Attendance</a>
         </div>
     </div>
 </div>
