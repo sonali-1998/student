@@ -18,25 +18,26 @@
         return view('welcome');
     });
 
-
+////////////////Student////////////////////
     Route::resource('sections', 'SectionController');
-
     Route::resource('classes', 'ClassController');
-
     Route::resource('students', 'StudentController');
+    Route::get('getStudentByClass/{sid}/{cid}', 'AttendanceController@getStudents');
 
+    /////////////////Attendance/////////////
     Route::resource('attendances', 'AttendanceController');
-
     Route::post('/attendance', 'AttendanceController@store');
 
-    Route::get('logout', 'Auth\LoginController@logout');
+    /////////////export///////////////
+    Route::get('export', 'StudentController@export');
 
+    ////////import///////////////////////
     Route::get('multi', 'StudentController@import');
     Route::post('bulk-upload', 'StudentController@bulkUpload');
-
     Route::get('multi', 'StudentController@import');
 
-    Route::get('getStudentByClass/{sid}/{cid}', 'AttendanceController@getStudents');
+    /////////////////login logout/////////////////////
+    Route::get('logout', 'Auth\LoginController@logout');
 
     Auth::routes();
 

@@ -24,6 +24,9 @@
                 <div class="pull-right" style="margin-right: 1%;">
                     <a class="btn btn-primary" href="{{ action('StudentController@import') }}"> Add Multiple Students</a>
                 </div> 
+                <div class="pull-right" style="margin-right: 1%;">
+                    <a class="btn btn-primary" href="{{ action('StudentController@export') }}">Export Multiple Students</a>
+                </div> 
             </div>
             @if ($message = Session::get('success')) 
             <div class="alert alert-success" style="margin-right: 90px;">

@@ -8,8 +8,9 @@
     use App\Section;
     use Maatwebsite\Excel\Facades\Excel;
     use App\Imports\StudentImport;
+    use App\Exports\StudentExport;
     use Maatwebsite\Excel\ExcelServiceProvider;
-    
+
     class StudentController extends Controller
     {
 
@@ -80,17 +81,24 @@
         }
 
         public function import()
-        { 
+        {
             return view('admin.multiple-student-add');
         }
 
         public function bulkUpload(Request $request)
-        { 
-           
+        {
+
             // validations 
             $path1 = $request->file('student_xls')->store('temp');
             $path = storage_path('app') . '/' . $path1;
             Excel::import(new StudentImport, $path);
+            return redirect()->route('students.index')
+                    ->with('success', 'Student imported successfully');
+        }
+
+        public function export()
+        {
+            return Excel::download(new StudentExport, 'student_xls.csv');
         }
 
     }
