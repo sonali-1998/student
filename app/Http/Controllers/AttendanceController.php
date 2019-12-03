@@ -29,7 +29,6 @@
 
         public function store(Request $request)
         {
-//            dd($request->all());
             $student = $request->get('student');
 
             $data = array();
@@ -42,7 +41,7 @@
                     'status' => $value[1],
                     'student_id' => $value[0],
                 ];
-            } 
+            }
             Attendance::insert($data);
             return redirect()->route('attendances.index')
                     ->with('success', 'Attendance created successfully');

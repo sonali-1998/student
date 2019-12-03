@@ -95,8 +95,6 @@
         }
     }
 
-
-
     function btnclk() {
 
         var student = [];
@@ -116,8 +114,6 @@
         });
         $.each(allstudent, function (stud, val) {
             $.each($("input[name='arr_students']"), function (key, value) {
-
-//                console.log('student', val, checkedstudent[key], value);
                 if (val == checkedstudent[key]) {
                     status.push([val, 'Yes']);
                     return true;

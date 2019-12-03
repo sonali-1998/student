@@ -34,9 +34,7 @@
                     <th>Date</th> 
                     <th>Class Name</th> 
                     <th>Section Name</th> 
-                    <th>Status</th> 
-<!--                    <th>Edit</th>
-                    <th>Delete</th>-->
+                    <th>Status</th>  
                 </tr>
                 @foreach ($attendances as $attendance)
 
@@ -47,14 +45,6 @@
                     <td>{{ $attendance->sections->section_name }} </td>
                     <td>{{ $attendance->status }} </td>
                     </td>  
-<!--                    <td> 
-                        <a class="btn btn-primary" href="{{ route('attendances.edit',$attendance->id) }}">Edit</a>
-                    </td> 
-                    <td>
-                        {!! Form::open(['method' => 'DELETE','route' => ['attendances.destroy', $attendance->id],'style'=>'display:inline']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                    </td>-->
                 </tr>
                 @endforeach
 

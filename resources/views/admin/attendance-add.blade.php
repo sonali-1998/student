@@ -1,5 +1,4 @@
 @extends('layouts.test')
-
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -23,7 +22,6 @@
 </div>
 @endif 
 {!! Form::open(array('route' => 'attendances.store','method'=>'POST')) !!}
-
 @include('admin.attendance-form')
 {!! Form::close() !!}
 @endsection
