@@ -98,7 +98,9 @@
 
         public function export()
         {
-            return Excel::download(new StudentExport, 'student_xls.csv');
+            $students = Student::with('classes', 'sections')->get(); 
+            $obj = new StudentExport($students);
+            return Excel::download($obj, 'student_xls.csv');
         }
 
     }
